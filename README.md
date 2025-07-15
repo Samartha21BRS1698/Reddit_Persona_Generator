@@ -1,22 +1,26 @@
+
+![Python](https://img.shields.io/badge/python-3.9-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 # Reddit_Persona_Generator
 
 A Python project that scrapes public Reddit user data (posts and comments) and uses a local open-source language model (flan-t5-large) to generate a psychological persona for that user.
 
 ## Features
- Scrapes up to 50 Reddit posts and 50 comments from a public Reddit user
+  • Scrapes up to 50 Reddit posts and 50 comments from a public Reddit user
 
- Uses a locally run HuggingFace model (distilgpt2) to generate the user's persona
+  • Uses a locally run HuggingFace model (distilgpt2) to generate the user's persona
 
- Works fully offline (after initial model download)
+  • Works fully offline (after initial model download)
 
- Outputs structured data with insights like:
+  • Outputs structured data with insights like:
 
-Name, Age, Occupation
+  • Name, Age, Occupation
 
-Behaviors, Goals, Frustrations
+  • Behaviors, Goals, Frustrations
 
-Archetype, Tier, Motivations, Personality
+  • Archetype, Tier, Motivations, Personality
 
+---
 ## Project Structure
 
 ```bash
@@ -34,6 +38,7 @@ Reddit_Persona_Generator/
 └── README.md 
 ```
 
+---
 ## Installation
 
 1. Clone the repo
@@ -55,7 +60,7 @@ source venv/bin/activate  # on macOS/Linux
 pip install -r requirements.txt
 ```
 
-
+---
 ## Configuration
 Create a .env file in the root directory:
 ```bash
@@ -65,6 +70,7 @@ REDDIT_USER_AGENT=RedditPersonaGen/0.0.1
 ```
 Get these credentials by registering an app at https://www.reddit.com/prefs/apps
 
+---
 ## Usage
 ```bash
 python main.py
@@ -82,7 +88,7 @@ The script will:
 
 -> Generate a structured persona with LLM and save it to output/{username}_persona.txt
 
-
+---
 ##  Persona Template
 
 ```text 
@@ -104,7 +110,7 @@ Based on the following Reddit posts and comments, generate a structured user per
 Here is the data:
 {REDDIT_DATA}
 ```
-
+---
 ##  Example Output
 ## Input:
 https://www.reddit.com/user/Ok_Remote_3322/
@@ -118,33 +124,34 @@ https://www.reddit.com/user/Ok_Remote_3322/
 **Status:** (undisclosed)  
 **Location:** India  
 
----
+...
 
-### 🧠 Behaviors & Habits
+### Behaviors & Habits
 - Active in cricket discussions  
 - Enjoys gym workouts and music  
 - Shares insights and emotional stories
 
 ...
 
-### 🧬 Personality
+### Personality
 - Emotional, passionate, community-oriented  
 - Balanced between fitness and leisure
 
-
+---
 ##  Technologies Used
-Python 3.x
+-> Python 3.x
 
-PRAW (Reddit API Wrapper)
+->PRAW (Reddit API Wrapper)
 
-Transformers (Hugging Face)
+->Transformers (Hugging Face)
 
-DistilGPT2
+->DistilGPT2
 
-Torch (PyTorch)
+->Torch (PyTorch)
 
-dotenv
+->dotenv
 
+---
 ## FAQ
  • Can I change the LLM?
 Yes. Just modify the model in llm_persona_generator.py. You can try gpt2, gpt2-medium, or fine-tuned LLMs too.
@@ -155,6 +162,7 @@ Yes. Once the HuggingFace model is downloaded, everything works offline.
  • Does it support multiple profiles in one run?
 Currently no. It processes one user at a time.
 
+---
 ## To-Do
  Add GUI with Streamlit
 
@@ -164,6 +172,7 @@ Currently no. It processes one user at a time.
 
  Add sarcasm/tone classification
 
+---
 ## Author
 
 **Samartha**  
@@ -173,5 +182,6 @@ B.Tech student
  
  [LinkedIn](https://www.linkedin.com/in/samartha-b0154a293) | [GitHub](https://github.com/Samartha21BRS1698)
 
+---
 ## License
  MIT License © 2025 Samartha
