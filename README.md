@@ -1,6 +1,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.9-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 # Reddit_Persona_Generator
 
 A Python project that scrapes public Reddit user data (posts and comments) and uses a local open-source language model (flan-t5-large) to generate a psychological persona for that user.
@@ -8,7 +9,7 @@ A Python project that scrapes public Reddit user data (posts and comments) and u
 ## Features
   • Scrapes up to 50 Reddit posts and 50 comments from a public Reddit user
 
-  • Uses a locally run HuggingFace model (distilgpt2) to generate the user's persona
+  • Uses a locally run LLM model (flan-t5-large) to generate the user's persona
 
   • Works fully offline (after initial model download)
 
@@ -143,9 +144,9 @@ https://www.reddit.com/user/Ok_Remote_3322/
 
 ->PRAW (Reddit API Wrapper)
 
-->Transformers (Hugging Face)
+->Transformers (Google)
 
-->DistilGPT2
+->flan-t5-large
 
 ->Torch (PyTorch)
 
@@ -164,19 +165,19 @@ Currently no. It processes one user at a time.
 
 ---
 ## To-Do
- Add GUI with Streamlit
+ • Add GUI with Streamlit
 
- Export persona to PDF
+ • Export persona to PDF
 
- Add support for OpenRouter or LM Studio
+ • Add support for OpenRouter or LM Studio
 
- Add sarcasm/tone classification
+ • Add sarcasm/tone classification
 
 ---
 ## Author
 
 **Samartha**  
-B.Tech student 
+B.Tech student at Vellore Institute of Technology 
  
  MySQL • AI/ML • Data Science •  NLP • Google Cloud 
  
