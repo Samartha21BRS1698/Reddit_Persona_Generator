@@ -19,7 +19,7 @@ def scrape_reddit_user(username: str, limit: int = 50):
         posts = []
         comments = []
 
-        print(f"🔍 Fetching posts and comments for u/{username}...")
+        print(f"Fetching posts and comments for u/{username}...")
 
         for submission in tqdm(user.submissions.new(limit=limit), desc="Posts"):
             posts.append({
@@ -36,9 +36,9 @@ def scrape_reddit_user(username: str, limit: int = 50):
                 "link": f"https://www.reddit.com{comment.permalink}"
             })
 
-        print(f"✅ Retrieved {len(posts)} posts and {len(comments)} comments.")
+        print(f"Retrieved {len(posts)} posts and {len(comments)} comments.")
         return posts, comments
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
         return [], []

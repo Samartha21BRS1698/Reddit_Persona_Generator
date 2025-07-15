@@ -17,7 +17,7 @@ def save_output(posts, comments, username):
         for comment in comments:
             f.write(f"Comment: {comment['body']}\nSubreddit: {comment['subreddit']}\nLink: {comment['link']}\n---\n")
 
-    print(f"📄 Raw data saved to {raw_filename}")
+    print(f"Raw data saved to {raw_filename}")
     return raw_filename
 
 def generate_persona(raw_file_path, username):
@@ -27,24 +27,24 @@ def generate_persona(raw_file_path, username):
     with open(raw_file_path, "r", encoding="utf-8") as f:
         reddit_data = f.read()
 
-    print(f"🧪 Reddit data length: {len(reddit_data)} characters")
+    print(f"Reddit data length: {len(reddit_data)} characters")
 
     if len(reddit_data) > 3000:
-        print("⚠️ Trimming Reddit content to 3000 characters for LLM...")
+        print("Trimming Reddit content to 3000 characters for LLM...")
     final_prompt = base_prompt.replace("{REDDIT_DATA}", reddit_data[:3000])
 
-    print("🧠 Generating persona using LLM...")
+    print("Generating persona using LLM...")
     persona_text = call_llm(final_prompt)
 
-    print("\n📝 GENERATED PERSONA:\n", persona_text)
+    print("\nGENERATED PERSONA:\n", persona_text)
 
     output_file = f"output/{username}_persona.txt"
     try:
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(persona_text)
-        print(f"✅ Persona saved to {output_file}")
+        print(f"Persona saved to {output_file}")
     except Exception as e:
-        print(f"❌ Could not save persona: {e}")
+        print(f"Could not save persona: {e}")
 
 if __name__ == "__main__":
     reddit_profile_url = input("🔗 Enter Reddit profile URL (e.g., https://www.reddit.com/user/kojied/): ").strip()
@@ -55,4 +55,4 @@ if __name__ == "__main__":
         raw_file = save_output(posts, comments, username)
         generate_persona(raw_file, username)
     else:
-        print("⚠️ No data scraped.")
+        print(" No data scraped.")
